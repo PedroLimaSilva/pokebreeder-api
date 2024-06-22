@@ -13,9 +13,8 @@ app.get('/hello', (_, res) => {
 
 app.get('/pokemon/:id', async (req, res) => {
   const pokeId = Number(req.params.id);
-  const exp = Number(req.query['exp'] || 1);
 
-  res.send(await getPokemonSpecimen(pokeId, exp));
+  res.send(await getPokemonSpecimen(pokeId));
 });
 
 ViteExpress.listen(app, 3000, () =>
